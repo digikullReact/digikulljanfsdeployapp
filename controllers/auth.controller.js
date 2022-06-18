@@ -20,6 +20,34 @@ const splitArray=req.files.file.path.split("/")
 
 var imageFile = req.files.file.path;
 
+const user=new User({
+    name:req.body.name,
+    email:req.body.email,
+    password:req.body.password,
+    profilePicture:splitArray[splitArray.length-1]
+     //profilePicture:result.url
+
+})
+
+user.save().then(data=>{
+
+    res.json({
+        message:"User data saved",
+        
+    })
+      
+ 
+  
+  
+    
+    }).catch(err=>{
+  
+      next(err);
+  
+    })
+
+    /*
+
 cloudinary.uploader.upload(imageFile, 
 function(error, result) {
     if(error){
@@ -30,8 +58,8 @@ function(error, result) {
             name:req.body.name,
             email:req.body.email,
             password:req.body.password,
-           // profilePicture:splitArray[splitArray.length-1]
-             profilePicture:result.url
+            profilePicture:splitArray[splitArray.length-1]
+             //profilePicture:result.url
       
         })
       
@@ -57,6 +85,8 @@ function(error, result) {
    
 
 });
+
+*/
 
 
 
