@@ -33,7 +33,8 @@ user.save().then(data=>{
 
     res.json({
         message:"User data saved",
-        
+        data:data
+
     })
       
  
