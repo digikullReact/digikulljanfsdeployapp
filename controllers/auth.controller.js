@@ -11,6 +11,40 @@ cloudinary.config({
     secure: true
   });
 
+  
+
+const signUp2=(req,res,next)=>{
+
+    const user=new User({
+        name:req.body.name,
+        email:req.body.email,
+        password:req.body.password,
+      
+      
+    
+    })
+    
+    user.save().then(data=>{
+    
+        res.json({
+            message:"User data saved",
+            data:data
+    
+        })
+          
+     
+      
+      
+        
+        }).catch(err=>{
+      
+          next(err);
+      
+        })
+    
+      
+    }
+    
 
 
 
@@ -141,6 +175,7 @@ const login=(req,res)=>{
 
 module.exports={
     signUp,
+    signUp2,
     login
 
 }

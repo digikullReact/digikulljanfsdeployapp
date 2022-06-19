@@ -37,6 +37,32 @@ const getUserdata=(req,res)=>{
 }
 
 
+const getUserdata2=(req,res)=>{
+
+
+   // OFFSET --in mysql 
+   User.find().then(response=>{
+
+    //  console.log(response);
+          // Will be querying the data
+  res.json({
+      message:"Success",
+      data:response,
+   
+  })
+
+
+  }).catch(err=>{
+    console.log(err);
+  })
+
+
+
+ 
+
+
+}
+
 const editData=(req,res)=>{
 
     const data=req.body;
@@ -86,6 +112,7 @@ const deleteData=(req,res)=>{
 module.exports={
     getUserdata,
     editData,
-    deleteData
+    deleteData,
+    getUserdata2
 
 }
