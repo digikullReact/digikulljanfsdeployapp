@@ -76,6 +76,13 @@ user.save().then(data=>{
   
     
     }).catch(err=>{
+        /**
+         *   res.json({
+        message:"User data saved",
+        data:data
+
+    })
+         */
   
       next(err);
   

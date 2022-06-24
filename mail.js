@@ -8,19 +8,17 @@ const sendEmail=(email,message)=>{
         from: "shubhamdixit101@outlook.com",
         to: email,
         subject: "SUCCESS REGISTRATION",
-        text: "Plaintext version of the message",
-        html: "<p>HTML version of the message</p>"
+        text: message,
+        html: `<p>${message}</p>`
       };
    const transporter= nodemailer.createTransport({
-        host: "smtp.mandrillapp.com",  // host of your smtp provider
+        host: "smtp-relay.sendinblue.com",  // host of your smtp provider
         port: 587,
         secure: false, // upgrade later with STARTTLS
-        tls: {
-          ciphers:'SSLv3'
-       },
+      
         auth: {
-          user: process.env.USERNAME,
-          pass: process.env.PASSWORD,
+          user: "shubhamdixit863@gmail.com",
+          pass: "s5TNfjXScGnBKrbY",
         },
       });
 
